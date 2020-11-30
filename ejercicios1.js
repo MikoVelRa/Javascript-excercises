@@ -19,9 +19,9 @@ const dividirPalabra = (palabra, separador) => palabra.split(separador);
 
 const repetirPalabra = (word, numberOfTimes) =>{
   let cadena = "";
-  for (let i = 0; i < numberOfTimes; i++) {
-    cadena += word + " ";
-  }
+    for (let i = 0; i < numberOfTimes; i++) {
+      cadena += word + " ";
+    }
   return cadena;
 }
 
