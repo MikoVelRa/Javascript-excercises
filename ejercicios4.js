@@ -22,10 +22,16 @@ const conversorTemperatura = (degrees, format) => {
     return "Parámetros vacíos";
   else if (typeof format !== "string" || typeof degrees !== "number")
     return "Formatos no válidos";
-  else if (format !== "C" && format !== "F") return "Formato inexistente";
+  else if (!/C|F/.test(format)) return "Formato inexistente";
   return format === "C"
     ? (degrees - 32) * 0.555556
     : format === "F"
     ? degrees * 1.8 + 32
     : "Introduzca un número";
 };
+
+console.log(conversorTemperatura());
+console.log(conversorTemperatura(33, "K"));
+console.log(conversorTemperatura([]));
+console.log(conversorTemperatura(33, "C"));
+console.log(conversorTemperatura(33, "F"));
