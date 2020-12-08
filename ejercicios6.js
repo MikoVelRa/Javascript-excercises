@@ -29,6 +29,24 @@ const validarCorreo = (correo) => {
     : `${correo} no es un correo válido`;
 };
 
-console.log(vocales_consonantes("Hola mundo"));
-console.log(validarNombre("Óscar Lira Añañín"));
-console.log(validarCorreo("jonmircha@gmail.com"));
+//Ejercicio gustoso
+const validarIp = (ip) => {
+  ip = ip.split(".");
+
+  for (digit of ip) {    
+    digit = parseInt(digit,10);
+    if (digit > 255) return "La ip no es válida";
+  }
+
+  ip = ip.join(".");
+
+  return /(^[1-9]{1}[0-9]{1,3})(\.[0-9]{1,3}){1,3}/g.exec(ip)[0] === ip
+    ? "Formato de ip válida"
+    : "Formato de ip no válida";
+};
+
+// console.log(vocales_consonantes("Hola mundo"));
+// console.log(validarNombre("Óscar Lira Añañín"));
+// console.log(validarCorreo("jonmircha@gmail.com"));
+console.log(validarIp("192.0.10.204"));
+//validarIp("192.0.10.0204");
